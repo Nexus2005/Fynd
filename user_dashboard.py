@@ -5,7 +5,6 @@ Allows users to submit reviews and receive AI-generated responses
 
 import streamlit as st
 import sys
-import os
 from pathlib import Path
 
 # Add src directory to path
@@ -26,12 +25,10 @@ st.set_page_config(
 storage = get_storage()
 llm = get_llm_manager()
 
-# Custom CSS for better styling
+# Custom CSS
 st.markdown("""
 <style>
-    .main {
-        padding: 2rem;
-    }
+    .main { padding: 2rem; }
     .stButton > button {
         background-color: #FF6B6B;
         color: white;
@@ -41,9 +38,7 @@ st.markdown("""
         padding: 0.5rem 2rem;
         font-size: 1rem;
     }
-    .stButton > button:hover {
-        background-color: #FF5252;
-    }
+    .stButton > button:hover { background-color: #FF5252; }
     .ai-response {
         background-color: #F0F8FF;
         padding: 1.5rem;
@@ -51,17 +46,13 @@ st.markdown("""
         border-left: 4px solid #4CAF50;
         margin: 1rem 0;
     }
-    .rating-select {
-        font-size: 1.5rem;
-    }
 </style>
 """, unsafe_allow_html=True)
 
-# App header
+# Header
 st.title("🌟 Yelp Review Assistant")
 st.markdown("*Share your experience and get instant AI-powered insights!*")
 
-# Create two columns for better layout
 col1, col2 = st.columns([1, 2])
 
 with col1:
@@ -86,64 +77,54 @@ with col2:
 if st.button("🚀 Submit Review", type="primary"):
     if review_text.strip():
         with st.spinner("🤖 AI is analyzing your review..."):
-            # Process with LLM
             ai_results = llm.process_review(rating, review_text)
-            
-            # Save to storage
+
             review_data = {
-                'user_rating': rating,
-                'user_review': review_text,
-                'ai_response': ai_results['ai_response'],
-                'ai_summary': ai_results['ai_summary'],
-                'ai_recommended_action': ai_results['ai_recommended_action']
+                "user_rating": rating,
+                "user_review": review_text,
+                "ai_response": ai_results["ai_response"],
+                "ai_summary": ai_results["ai_summary"],
+                "ai_recommended_action": ai_results["ai_recommended_action"],
+                "timestamp": st.session_state.get("timestamp", "")
             }
-            
-            if storage.save_review(review_data):
+
+            # 🔥 FIXED: use add_review(), not save_review()
+            if storage.add_review(review_data):
                 st.success("✅ Review submitted successfully!")
-                
-                # Display AI response
+
                 st.markdown("### 🤖 AI Response")
-                st.markdown(f"<div class='ai-response'>{ai_results['ai_response']}</div>", 
-                           unsafe_allow_html=True)
-                
-                # Show additional insights in expander
+                st.markdown(
+                    f"<div class='ai-response'>{ai_results['ai_response']}</div>",
+                    unsafe_allow_html=True
+                )
+
                 with st.expander("📊 View AI Analysis"):
                     st.markdown("**Summary:**")
-                    st.write(ai_results['ai_summary'])
-                    
+                    st.write(ai_results["ai_summary"])
+
                     st.markdown("**Recommended Action:**")
-                    st.write(ai_results['ai_recommended_action'])
+                    st.write(ai_results["ai_recommended_action"])
             else:
                 st.error("❌ Failed to save review. Please try again.")
     else:
         st.warning("⚠️ Please write a review before submitting.")
 
-# Sidebar with information
+# Sidebar
 with st.sidebar:
     st.markdown("## 📱 About")
     st.info(
-        "This AI-powered assistant helps you get the most out of your Yelp reviews. "
-        "Submit your rating and review to receive instant AI-generated insights and recommendations."
+        "Submit your review to receive AI-generated responses, summaries, "
+        "and business recommendations."
     )
-    
-    st.markdown("## 🎯 Features")
-    st.markdown("- ⭐ Rate your experience (1-5 stars)")
-    st.markdown("- 📝 Write detailed reviews")
-    st.markdown("- 🤖 Get AI-powered responses")
-    st.markdown("- 📊 Receive business insights")
-    st.markdown("- 💡 Actionable recommendations")
-    
-    # Show total reviews
-    analytics = storage.get_analytics()
+
     st.markdown("## 📈 Stats")
+    analytics = storage.get_analytics()
     st.metric("Total Reviews", analytics['total_reviews'])
     if analytics['avg_rating'] > 0:
         st.metric("Average Rating", f"{analytics['avg_rating']:.1f} ⭐")
 
-# Footer
 st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: #666;'>"
-    "Powered by Gemini AI | Built with Streamlit</div>",
+    "<div style='text-align: center; color: #666;'>Powered by Gemini AI | Built with Streamlit</div>",
     unsafe_allow_html=True
 )
