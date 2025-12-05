@@ -94,24 +94,39 @@ with c4:
     </div>
     """, unsafe_allow_html=True)
 
+
 # ---------------- ANALYTICS CHARTS ----------------
 if analytics['total_reviews'] > 0:
     st.markdown("## 📊 Analytics")
 
     c1, c2 = st.columns(2)
 
+    # Rating distribution
     with c1:
         data = [{'Rating': f"{i}⭐", 'Count': analytics['rating_distribution'].get(i, 0)} for i in range(1, 6)]
         df = pd.DataFrame(data)
         fig = px.bar(df, x="Rating", y="Count", title="Rating Distribution")
         st.plotly_chart(fig, width="stretch")
 
+    # Recent activity
     with c2:
         recent = pd.DataFrame(analytics["recent_reviews"])
+
         if not recent.empty:
-            recent['timestamp'] = pd.to_datetime(recent['timestamp'])
-            fig2 = px.scatter(recent, x="timestamp", y="user_rating", title="Recent Review Activity")
-            st.plotly_chart(fig2, width="stretch")
+            # FIX: Prevent crash on invalid/empty timestamps
+            recent["timestamp"] = pd.to_datetime(recent["timestamp"], errors="coerce")
+            recent = recent.dropna(subset=["timestamp"])
+            recent = recent.sort_values("timestamp")
+
+            if not recent.empty:
+                fig2 = px.scatter(
+                    recent,
+                    x="timestamp",
+                    y="user_rating",
+                    title="Recent Review Activity",
+                )
+                st.plotly_chart(fig2, width="stretch")
+
 
 # ---------------- REVIEW LIST ----------------
 st.markdown("## 📝 All Reviews")
