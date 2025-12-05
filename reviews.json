@@ -131,5 +131,13 @@
     "ai_summary": "This 5-star review praises the warm, inviting ambiance for creating a perfect evening and strongly recommends it as a must-visit.",
     "ai_recommended_action": "Elevate service quality to consistently match the warm and inviting ambiance.",
     "timestamp": ""
+  },
+  {
+    "user_rating": 4,
+    "user_review": "It was the great experience",
+    "ai_response": "Thank you for your fantastic feedback! We're so glad to hear you had a great experience with us. We're always striving for perfection and hope to welcome you back again soon for a five-star visit!",
+    "ai_summary": "The reviewer gave four stars, describing their visit as a great experience.",
+    "ai_recommended_action": "Proactively ask customers for more specific feedback about what they enjoyed or what could be improved.",
+    "timestamp": ""
   }
 ]
