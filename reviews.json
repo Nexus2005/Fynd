@@ -115,5 +115,13 @@
     "ai_recommended_action": "Introduce a distinctive sensory element (e.g., signature scent, curated playlist) to further elevate the 'warm, inviting ambiance'.",
     "id": 13,
     "timestamp": "2025-12-05T23:50:38.515454"
+  },
+  {
+    "user_rating": 5,
+    "user_review": "Great food, especially the fresh sushi! ",
+    "ai_response": "Thank you so much for the fantastic 5-star review! We're thrilled to hear you enjoyed our great food, especially the fresh sushi. We look forward to welcoming you back again soon!",
+    "ai_summary": "This 5-star review praises the restaurant's great food, specifically highlighting the fresh sushi.",
+    "ai_recommended_action": "Expand your fresh sushi offerings.",
+    "timestamp": ""
   }
 ]
