@@ -5,62 +5,82 @@ from datetime import datetime
 import pandas as pd
 import base64
 
-RAW_URL = "https://raw.githubusercontent.com/Nexus2005/Fynd/main/cloud_storage/reviews.json"
-API_URL = "https://api.github.com/repos/Nexus2005/Fynd/contents/cloud_storage/reviews.json"
+# ----------------------------
+# GitHub Storage Configuration
+# ----------------------------
+GITHUB_REPO = "Nexus2005/Fynd"
+FILE_PATH = "reviews.json"
 
-GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN")
+RAW_URL = f"https://raw.githubusercontent.com/{GITHUB_REPO}/main/{FILE_PATH}"
+API_URL = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
 
-headers = {
+GITHUB_TOKEN = st.secrets.get("GITHUB_TOKEN")  # MUST be added in Streamlit secrets
+
+HEADERS = {
     "Authorization": f"Bearer {GITHUB_TOKEN}",
-    "Content-Type": "application/json"
+    "Accept": "application/vnd.github+json"
 }
 
 
 class CloudStorage:
-    def load_reviews(self):
-        """Load review list from RAW GitHub JSON"""
-        try:
-            data = requests.get(RAW_URL).json()
-            return data if isinstance(data, list) else []
-        except Exception:
-            return []
 
-    def save_reviews(self, data):
-        """Write updated JSON to GitHub through API"""
+    # ----------------------------
+    # Load reviews from GitHub raw
+    # ----------------------------
+    def load_reviews(self):
         try:
-            # Encode data to base64
-            content = base64.b64encode(
+            r = requests.get(RAW_URL)
+            if r.status_code == 200:
+                return r.json()
+        except:
+            pass
+        return []
+
+    # ----------------------------
+    # Save reviews back to GitHub
+    # ----------------------------
+    def save_reviews(self, data):
+        try:
+            # Encode to base64
+            encoded = base64.b64encode(
                 json.dumps(data, indent=2).encode()
             ).decode()
 
-            # Get SHA of existing file
-            existing = requests.get(API_URL, headers=headers).json()
-            sha = existing.get("sha")
+            # Get SHA
+            sha_info = requests.get(API_URL, headers=HEADERS).json()
+            sha = sha_info.get("sha")
 
             payload = {
                 "message": "Update reviews.json",
-                "content": content,
+                "content": encoded,
                 "sha": sha
             }
 
-            requests.put(API_URL, headers=headers, json=payload)
-            return True
+            resp = requests.put(API_URL, headers=HEADERS, json=payload)
+            return resp.status_code in (200, 201)
 
         except Exception as e:
             print("SAVE ERROR:", e)
             return False
 
+    # ----------------------------
+    # Add one review
+    # ----------------------------
     def add_review(self, entry):
-        """Append a new review"""
-        reviews = self.load_reviews()
-        reviews.append(entry)
-        return self.save_reviews(reviews)
+        data = self.load_reviews()
+        data.append(entry)
+        return self.save_reviews(data)
 
+    # ----------------------------
+    # Get all
+    # ----------------------------
     def get_all_reviews(self):
         return self.load_reviews()
 
+    # ----------------------------
+    # Dashboard analytics
+    # ----------------------------
     def get_analytics(self):
-        """Compute stats for admin dashboard"""
         reviews = self.load_reviews()
         if not reviews:
             return {
@@ -70,25 +90,29 @@ class CloudStorage:
                 "recent_reviews": []
             }
 
-        df = pd.DataFrame(reviews)
+        total = len(reviews)
+        avg = sum(r["user_rating"] for r in reviews) / total
 
-        # Rating distribution
-        dist = df["user_rating"].value_counts().to_dict()
+        dist = {}
+        for r in reviews:
+            dist[r["user_rating"]] = dist.get(r["user_rating"], 0) + 1
 
-        # Recent 20 reviews
-        recent = df.tail(20).to_dict(orient="records")
+        recent = reviews[-20:]
 
         return {
-            "total_reviews": len(df),
-            "avg_rating": float(df["user_rating"].mean()),
+            "total_reviews": total,
+            "avg_rating": avg,
             "rating_distribution": dist,
             "recent_reviews": recent
         }
 
-    def export_to_csv(self, path):
+    # ----------------------------
+    # Export CSV
+    # ----------------------------
+    def export_to_csv(self, filename):
         try:
             df = pd.DataFrame(self.load_reviews())
-            df.to_csv(path, index=False)
+            df.to_csv(filename, index=False)
             return True
         except:
             return False
