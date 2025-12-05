@@ -1,0 +1,110 @@
+[
+  {
+    "user_rating": 3,
+    "user_review": "The food was great but the service was slow.\n",
+    "ai_response": "Thank you for your review! We're delighted to hear that you enjoyed our food so much. We sincerely apologize for the slow service you experienced and are actively working with our team to improve efficiency. We hope you'll visit us again soon for an even better experience!",
+    "ai_summary": "The reviewer gave 3 stars, highlighting that the food was great but the service was slow.",
+    "ai_recommended_action": "Optimize staffing levels to improve service speed.",
+    "id": 1,
+    "timestamp": "2025-12-05T21:51:30.494333"
+  },
+  {
+    "user_rating": 5,
+    "user_review": "Absolutely loved the food! Everything was fresh, flavorful, and the staff was super friendly. Will definitely be coming back soon.",
+    "ai_response": "Thank you so much for your fantastic 5-star review! We're absolutely thrilled to hear you loved the fresh, flavorful food and enjoyed the friendly service. We can't wait to welcome you back again soon!",
+    "ai_summary": "This 5-star review raves about the restaurant's fresh, flavorful food and super friendly staff, with the reviewer planning to return soon.",
+    "ai_recommended_action": "Introduce a loyalty program to further encourage and reward repeat visits.",
+    "id": 2,
+    "timestamp": "2025-12-05T22:18:33.648808"
+  },
+  {
+    "user_rating": 5,
+    "user_review": "Perfect experience from start to finish. The ambience, service, and portion sizes were all excellent. Highly recommend to everyone.",
+    "ai_response": "Thank you for your wonderful 5-star review! We're absolutely thrilled to hear that our ambience, service, and portion sizes contributed to such a \"perfect experience\" for you. We can't wait to welcome you back again soon!",
+    "ai_summary": "This 5-star review describes a perfect experience from start to finish, praising the excellent ambience, service, and portion sizes, and highly recommends it to everyone.",
+    "ai_recommended_action": "Implement a customer referral program.",
+    "id": 3,
+    "timestamp": "2025-12-05T22:19:01.641018"
+  },
+  {
+    "user_rating": 4,
+    "user_review": "Great food and quick service. A little crowded during peak hours, but overall a very good experience.",
+    "ai_response": "Thank you for your fantastic review! We're thrilled you had a very good experience, enjoying our great food and quick service. We appreciate your feedback about peak hours and hope to welcome you back again soon!",
+    "ai_summary": "This 4-star review highlights great food and quick service, noting that while it can be a little crowded during peak hours, the overall experience was very good.",
+    "ai_recommended_action": "Optimize the seating arrangement to improve comfort during peak hours.",
+    "id": 4,
+    "timestamp": "2025-12-05T22:19:36.585826"
+  },
+  {
+    "user_rating": 4,
+    "user_review": "Really enjoyed my meal here. Just wish the desserts had more variety. Otherwise excellent.",
+    "ai_response": "Thank you for your fantastic review! We're delighted to hear you thoroughly enjoyed your meal. We appreciate your feedback regarding dessert variety and are always exploring new options to enhance our menu. We hope to welcome you back again soon!",
+    "ai_summary": "The reviewer thoroughly enjoyed their meal and found the overall experience excellent, with their only minor complaint being the limited variety of desserts.",
+    "ai_recommended_action": "Expand the dessert menu to offer more variety.",
+    "id": 5,
+    "timestamp": "2025-12-05T22:19:59.463356"
+  },
+  {
+    "user_rating": 3,
+    "user_review": "Decent place. Nothing extraordinary but nothing bad either. Average food, average service.",
+    "ai_response": "Thank you for sharing your feedback. We appreciate you taking the time to let us know you found your experience to be decent, with average food and service. We're always striving to go beyond 'average' and hope you'll visit us again for a more memorable experience.",
+    "ai_summary": "This 3-star review describes the place as decent, with average food and service that was neither extraordinary nor bad. It suggests an unremarkable but satisfactory overall experience.",
+    "ai_recommended_action": "Develop a unique, signature dish or drink to give customers a memorable reason to visit.",
+    "id": 6,
+    "timestamp": "2025-12-05T22:20:24.615068"
+  },
+  {
+    "user_rating": 3,
+    "user_review": "The experience was okay. Food tasted fine but the waiting time was longer than expected.",
+    "ai_response": "Thank you for sharing your feedback regarding your recent visit. We're glad to hear the food was fine, but we sincerely apologize for the longer-than-expected waiting time, which we understand made your experience only \"okay.\" We are actively working to improve our service speed and hope you'll consider giving us another opportunity to impress you.",
+    "ai_summary": "The reviewer had an okay experience with fine-tasting food, but noted that the waiting time was longer than expected.",
+    "ai_recommended_action": "Provide more accurate wait time estimates to customers.",
+    "id": 7,
+    "timestamp": "2025-12-05T22:20:34.941481"
+  },
+  {
+    "user_rating": 2,
+    "user_review": "The food was under-seasoned and the service felt slow. The place has potential but needs improvements.",
+    "ai_response": "Thank you for your feedback. We're truly sorry to hear about the under-seasoned food and slow service you experienced, and we appreciate you noticing our potential. We are actively working to improve in these areas and hope you'll consider visiting us again to see our progress.",
+    "ai_summary": "This 2-star review criticized the under-seasoned food and slow service. Despite these issues, the reviewer felt the establishment has potential for improvement.",
+    "ai_recommended_action": "Implement a final taste check for all dishes before they leave the kitchen to ensure proper seasoning.",
+    "id": 8,
+    "timestamp": "2025-12-05T22:21:04.526222"
+  },
+  {
+    "user_rating": 2,
+    "user_review": "Not very satisfied. Prices were high compared to the quality they delivered.",
+    "ai_response": "Thank you for taking the time to share your feedback. We're truly sorry to hear you weren't satisfied and felt our prices didn't reflect the quality you expected. We are constantly evaluating our offerings to ensure excellent value, and your comments are invaluable as we strive to improve.",
+    "ai_summary": "The reviewer was dissatisfied, finding the prices high relative to the quality of the product or service received.",
+    "ai_recommended_action": "Improve the quality of your product or service to align with your current pricing.",
+    "id": 9,
+    "timestamp": "2025-12-05T22:21:21.514699"
+  },
+  {
+    "user_rating": 1,
+    "user_review": "Terrible experience. The food arrived cold and the staff didn\u2019t seem interested in helping.",
+    "ai_response": "Thank you for sharing your feedback. We are truly sorry to hear your food arrived cold and that our staff didn't seem helpful, as this is certainly not the experience we want for our guests. We're committed to improving and hope you might consider giving us another chance to make things right.",
+    "ai_summary": "This 1-star review describes a terrible experience where the food arrived cold. The reviewer also noted that the staff seemed uninterested in helping resolve the issue.",
+    "ai_recommended_action": "Train staff on empathetic customer service and proactive problem resolution.",
+    "id": 10,
+    "timestamp": "2025-12-05T22:21:52.147435"
+  },
+  {
+    "user_rating": 1,
+    "user_review": "Very disappointed. Long wait times, rude staff, and the food tasted stale. Would not recommend",
+    "ai_response": "Thank you for sharing your feedback; we are truly sorry to hear about your disappointing visit. We sincerely apologize for the long wait, rude staff, and for the food not meeting our standards. We would appreciate the opportunity to discuss this further and make things right if you'd be willing to contact us directly.",
+    "ai_summary": "The reviewer gave this establishment 1 star, expressing strong disappointment with long wait times, rude staff, and stale food. They would not recommend it.",
+    "ai_recommended_action": "Implement strict quality control for food freshness.",
+    "id": 11,
+    "timestamp": "2025-12-05T22:22:28.147072"
+  },
+  {
+    "user_rating": 5,
+    "user_review": "The Food was very nice, highly recommend this place.",
+    "ai_response": "Thank you so much for your wonderful review! We're thrilled to hear you found the food \"very nice\" and highly recommend us. We'd love to welcome you back again soon!",
+    "ai_summary": "This 5-star review highly recommends the place, noting the food was very nice.",
+    "ai_recommended_action": "Encourage patrons to mention specific dishes or aspects of their visit in future reviews.",
+    "id": 12,
+    "timestamp": "2025-12-05T22:38:04.304225"
+  }
+]
