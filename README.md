@@ -112,8 +112,6 @@ Detailed analysis
 
 Example Chart
 
-(Replace after pushing to GitHub)
-
 ![Rating Distribution](images/admin_dashboard(1).png)
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -228,8 +226,6 @@ detailed_analysis.txt	In-depth reasoning & findings
 🖼️ Screenshots & Demo
 
 ---------------------------------------------------------------------------------------------------------------------
-Include all images:
-
 ![Dashboard Overview](images/admin_dashboard.png)
 ![Analytics](images/admin_dashboard(1).png)
 ![Reviews](images/admin_dashboard(2).png)
