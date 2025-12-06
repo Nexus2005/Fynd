@@ -155,5 +155,13 @@
     "ai_summary": "This 4-star review highly recommends the place for its tasty food, which the reviewer finds justifies the price. It's highlighted as a must-visit, self-service spot especially for vegetarians.",
     "ai_recommended_action": "Provide clearer guidance for the self-service process.",
     "timestamp": ""
+  },
+  {
+    "user_rating": 5,
+    "user_review": "Nice place for variety of South Indian delicious food. Ragi mudde is especially recommended. Pudina dosa is also nice",
+    "ai_response": "Thank you so much for your fantastic review! We're absolutely delighted you enjoyed our variety of delicious South Indian food, and especially appreciate your recommendations for the Ragi Mudde and Pudina Dosa. We can't wait to welcome you back again soon!",
+    "ai_summary": "This 5-star review highly recommends the restaurant for its variety of delicious South Indian food, specifically praising the Ragi mudde and also enjoying the Pudina dosa.",
+    "ai_recommended_action": "Highlight Ragi Mudde as a recommended special or signature dish.",
+    "timestamp": ""
   }
 ]
