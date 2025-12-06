@@ -139,5 +139,13 @@
     "ai_summary": "The reviewer gave four stars, describing their visit as a great experience.",
     "ai_recommended_action": "Proactively ask customers for more specific feedback about what they enjoyed or what could be improved.",
     "timestamp": ""
+  },
+  {
+    "user_rating": 4,
+    "user_review": "Nice place for variety of South Indian delicious food. Ragi mudde is especially recommended. Pudina dosae is also nice",
+    "ai_response": "AI response failed.",
+    "ai_summary": "AI response failed.",
+    "ai_recommended_action": "AI response failed.",
+    "timestamp": ""
   }
 ]
