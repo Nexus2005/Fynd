@@ -147,5 +147,13 @@
     "ai_summary": "AI response failed.",
     "ai_recommended_action": "AI response failed.",
     "timestamp": ""
+  },
+  {
+    "user_rating": 4,
+    "user_review": "Tasty food hence the price must visit place for veg and self service.",
+    "ai_response": "Thank you for your wonderful 4-star review! We're delighted to hear you enjoyed our tasty vegetarian food and found us a \"must visit\" place for the convenience of self-service. We strive to offer great quality, and we're glad you felt the value was there. We look forward to serving you again soon!",
+    "ai_summary": "This 4-star review highly recommends the place for its tasty food, which the reviewer finds justifies the price. It's highlighted as a must-visit, self-service spot especially for vegetarians.",
+    "ai_recommended_action": "Provide clearer guidance for the self-service process.",
+    "timestamp": ""
   }
 ]
