@@ -171,5 +171,13 @@
     "ai_summary": "This 5-star review highly praises the Ghee Podi Masala Dosa from Rameshwaram cafe at the Lil Flea. The reviewer found it incredibly satisfying, highlighting its initial ghee aroma, crisp texture, and flavorful podi spice.",
     "ai_recommended_action": "Clearly promote your permanent restaurant location (if applicable) or upcoming event schedule at your temporary stalls like the Lil Flea.",
     "timestamp": ""
+  },
+  {
+    "user_rating": 5,
+    "user_review": "Extremely Satisfying Service and staff ",
+    "ai_response": "Thank you so much for your wonderful 5-star review! We're thrilled to hear you found our service and staff extremely satisfying. Your kind words truly make our day, and we look forward to welcoming you back again soon!",
+    "ai_summary": "This 5-star review highly praises the service and staff, finding them extremely satisfying.",
+    "ai_recommended_action": "Identify specific aspects of the service and staff interactions that led to such high satisfaction to replicate consistently.",
+    "timestamp": ""
   }
 ]
